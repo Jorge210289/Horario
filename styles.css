@@ -32,6 +32,28 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* --- Nuevo Estilo para el Contador de Siguiente Clase --- */
+.countdown-banner {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(135deg, #00796b, #004d40); /* Degradado profesional */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.countdown-banner span {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 5px;
+}
+
+.countdown-banner.on-break {
+    background: linear-gradient(135deg, #ff9800, #d84315); /* Naranja/Rojo para Receso */
+}
+
 /* Estilos de la Tabla */
 .horario-clases {
     width: 100%;
