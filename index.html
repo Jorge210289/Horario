@@ -13,6 +13,11 @@
         <!-- El contenido de este párrafo se actualizará con la hora actual mediante JavaScript -->
         <p class="metadata">Profesor: Jorge Luis Abreu, M.A. | Generado: 27/08/2025</p>
 
+        <!-- Banner de Contador de Clase Siguiente (NUEVO) -->
+        <div id="countdown-banner" class="countdown-banner">
+            Preparando la agenda...
+        </div>
+
         <div class="table-responsive-container"> <!-- Contenedor para scroll horizontal en móvil -->
             <table class="horario-clases">
                 <thead>
@@ -40,52 +45,56 @@
                         <td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
                         <td class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
                         <td rowspan="5" class="almuerzo">Almuerzo</td>
-                        <td colspan="2" class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
+                        <td colspan="2" class="clase Pedagogica">Pedagógica<br><span class="grupo"></span></td>
                         <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
                     </tr>
                     <tr>
                         <td class="dia">Mar</td>
                         <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
-                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>				
+                        <td class="clase Pedagogica">Pedagógica<br><span class="grupo"></span></td>				
                         <td class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
                         <td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
-                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>							
+                        <td class="clase Pedagogica">Pedagógica<br><span class="grupo"></span></td>							
                         <td class="clase taller">Taller<br><span class="grupo">3ro A</span></td>
                         <td class="clase imadsi">IMASI<br><span class="grupo">6to</span></td>
                         <td class="clase tec-dig">Tec. Dig<br><span class="grupo">4to C</span></td>
-                        </tr>
+                        <td></td>
+                    </tr>
                     <tr>
                         <td class="dia">Mi</td>
                         <td class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
                         <td class="clase diseno-bd">DDBD-CALIG<br><span class="grupo">4to B</span></td>
                         <td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
-                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>	
+                        <td class="clase Pedagogica">Pedagógica<br><span class="grupo"></span></td>	
                         <td class="clase imadsi">IMASI<br><span class="grupo">6to I</span></td>
-                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>	
+                        <td class="clase Pedagogica">Pedagógica<br><span class="grupo"></span></td>	
                         <td class="clase tec-dig">Tec. Dig<br><span class="grupo">4to C</span></td>		
                         <td class="clase taller">Taller<br><span class="grupo">3ro B</span></td>
-                     </tr>
+                        <td></td>
+                    </tr>
                     <tr>
                         <td class="dia">Jue</td>
-                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>	
+                        <td class="clase Pedagogica">Pedagógica<br><span class="grupo"></span></td>	
                         <td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
-                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
+                        <td class="clase Pedagogica">Pedagógica<br><span class="grupo"></span></td>
                         <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
-                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
+                        <td class="clase Pedagogica">Pedagógica<br><span class="grupo"></span></td>
                         <td colspan="2" class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
                         <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
-                       </tr>
+                        <td></td>
+                    </tr>
                     <tr>
                         <td class="dia">Vie</td>
-                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
+                        <td class="clase Pedagogica">Pedagógica<br><span class="grupo"></span></td>
                         <td class="clase imadsi">IMASI<br><span class="grupo">6to</span></td>
                         <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
-                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
+                        <td class="clase Pedagogica">Pedagógica<br><span class="grupo"></span></td>
                         <td class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
                         <td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
                         <td class="clase diseno-bd">DDBD-VPS<br><span class="grupo">4to B</span></td>
                         <td class="clase diseno-web">DPWRM-VPS<br><span class="grupo">4to B</span></td>
-                        </tr>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -106,20 +115,63 @@
 
         // Definición de los intervalos de tiempo y sus correspondientes períodos.
         const periods = [
-            { start: "08:00", end: "08:50", period: 1 },
-            { start: "08:50", end: "09:40", period: 2 },
-            { start: "09:40", end: "10:30", period: 3 },
-            { start: "10:30", end: "11:00", period: "Recreo" }, 
-            { start: "11:00", end: "11:45", period: 4 },
-            { start: "11:45", end: "12:30", period: 5 },
-            { start: "12:30", end: "13:30", period: "Almuerzo" }, 
-            { start: "13:30", end: "14:20", period: 6 },
-            { start: "14:20", end: "15:10", period: 7 },
-            { start: "15:10", end: "16:00", period: 8 },
+            { start: "08:00", end: "08:50", period: 1, name: "Clase 1" },
+            { start: "08:50", end: "09:40", period: 2, name: "Clase 2" },
+            { start: "09:40", end: "10:30", period: 3, name: "Clase 3" },
+            { start: "10:30", end: "11:00", period: "Recreo", name: "Recreo" }, 
+            { start: "11:00", end: "11:45", period: 4, name: "Clase 4" },
+            { start: "11:45", end: "12:30", period: 5, name: "Clase 5" },
+            { start: "12:30", end: "13:30", period: "Almuerzo", name: "Almuerzo" }, 
+            { start: "13:30", end: "14:20", period: 6, name: "Clase 6" },
+            { start: "14:20", end: "15:10", period: 7, name: "Clase 7" },
+            { start: "15:10", end: "16:00", period: 8, name: "Clase 8" },
         ];
         
         // Elemento para actualizar la hora actual
         const metadataEl = document.querySelector('.metadata');
+        const countdownBannerEl = document.getElementById('countdown-banner');
+
+        /**
+         * Parsea la hora "HH:MM" en minutos totales desde la medianoche.
+         */
+        function timeToMinutes(timeString) {
+            const [hours, minutes] = timeString.split(':').map(Number);
+            return hours * 60 + minutes;
+        }
+
+        /**
+         * Obtiene el nombre real de la asignatura en una celda de la tabla.
+         */
+        function getCellSubject(dayIndex, periodIndex) {
+            const scheduleBody = document.querySelector('.horario-clases tbody');
+            const currentRow = scheduleBody.rows[dayIndex];
+            
+            if (!currentRow) return "Desconocida";
+
+            // Casos especiales (Recreo y Almuerzo)
+            if (periodIndex === "Recreo") return "RECREO";
+            if (periodIndex === "Almuerzo") return "ALMUERZO";
+            
+            let cellIndex = -1;
+            const rowMap = periodCellMap[dayIndex];
+
+            // Clases Regulares
+            const periodArrayIndex = periodIndex - 1; 
+            if (rowMap && periodArrayIndex >= 0 && periodArrayIndex < rowMap.length) {
+                 cellIndex = rowMap[periodArrayIndex];
+            }
+
+            if (cellIndex !== -1) {
+                // Buscamos la celda por su índice relativo en la fila
+                const targetCell = currentRow.getElementsByTagName('td')[cellIndex];
+                if (targetCell) {
+                    // El contenido principal (e.g., DASI, DDBD) es el primer nodo de texto
+                    const subject = targetCell.firstChild.textContent.trim();
+                    return subject || "Asignatura";
+                }
+            }
+            return "Asignatura";
+        }
 
         /**
          * Actualiza el párrafo de metadatos con la fecha y hora actual.
@@ -130,6 +182,100 @@
             const time = now.toLocaleTimeString('es-DO', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
             const date = now.toLocaleDateString('es-DO', { day: '2-digit', month: '2-digit', year: 'numeric' });
             metadataEl.innerHTML = `Profesor: Jorge Luis Abreu, M.A. | Hoy: ${date} | Hora Actual: ${time}`;
+        }
+
+
+        /**
+         * Calcula y actualiza el contador para la siguiente transición (inicio/fin de clase).
+         */
+        function updateCountdown() {
+            const now = new Date();
+            const currentDayIndex = now.getDay() - 1; // 0=Lun, 1=Mar, etc.
+            const currentTotalSeconds = (now.getHours() * 3600) + (now.getMinutes() * 60) + now.getSeconds();
+            
+            // Si es fin de semana o fuera del rango 8:00 - 16:00, mostramos mensaje de fin de día.
+            if (currentDayIndex < 0 || currentDayIndex > 4 || currentTotalSeconds < timeToMinutes(periods[0].start) * 60) {
+                 countdownBannerEl.innerHTML = "¡Fin de semana! Disfrute su descanso.";
+                 countdownBannerEl.classList.remove('on-break');
+                 return;
+            }
+            
+            let currentPeriod = null;
+            let nextEventTime = null;
+            let nextSubjectName = "El día ha terminado.";
+            let isBreak = false;
+            let isEnding = false;
+
+            // Buscar el período actual y el próximo evento.
+            for (let i = 0; i < periods.length; i++) {
+                const p = periods[i];
+                const startSeconds = timeToMinutes(p.start) * 60;
+                const endSeconds = timeToMinutes(p.end) * 60;
+
+                if (currentTotalSeconds >= startSeconds && currentTotalSeconds < endSeconds) {
+                    // Estamos en el período actual (Clase o Receso)
+                    currentPeriod = p;
+                    nextEventTime = endSeconds;
+                    nextSubjectName = getCellSubject(currentDayIndex, p.period);
+                    isBreak = p.period === "Recreo" || p.period === "Almuerzo";
+                    isEnding = true;
+                    break;
+                } else if (currentTotalSeconds < startSeconds) {
+                    // Estamos en el tiempo muerto ANTES del inicio de esta clase.
+                    nextEventTime = startSeconds;
+                    nextSubjectName = getCellSubject(currentDayIndex, p.period);
+                    isBreak = p.period === "Recreo" || p.period === "Almuerzo";
+                    isEnding = false;
+                    break;
+                }
+            }
+            
+            let message = "";
+            countdownBannerEl.classList.remove('on-break');
+            
+            // Lógica para fuera de horario después de la última clase
+            if (!currentPeriod && !nextEventTime && currentTotalSeconds >= timeToMinutes(periods[periods.length - 1].end) * 60) {
+                 message = "¡Jornada finalizada! Hasta mañana, profesor.";
+                 countdownBannerEl.innerHTML = message;
+                 return;
+            }
+
+            // Calcular el tiempo restante
+            if (nextEventTime !== null) {
+                const totalSecondsLeft = nextEventTime - currentTotalSeconds;
+
+                if (totalSecondsLeft <= 0) {
+                    // Esto no debería suceder si la lógica de búsqueda es correcta, 
+                    // pero ayuda a manejar transiciones
+                    checkCurrentClass(); // Forzar la actualización inmediata del resaltado
+                    return; 
+                }
+
+                const minutesLeft = Math.floor(totalSecondsLeft / 60);
+                const secondsLeft = totalSecondsLeft % 60;
+
+                const timeDisplay = `${String(minutesLeft).padStart(2, '0')}:${String(secondsLeft).padStart(2, '0')}`;
+                
+                if (isEnding) {
+                    // El evento actual está terminando
+                    if (isBreak) {
+                        countdownBannerEl.classList.add('on-break');
+                        message = `${nextSubjectName}. Termina en: <span>${timeDisplay}</span>`;
+                    } else {
+                        message = `Clase Actual: ${nextSubjectName}. Termina en: <span>${timeDisplay}</span>`;
+                    }
+                } else {
+                    // El evento está por comenzar
+                    if (isBreak) {
+                        countdownBannerEl.classList.add('on-break');
+                        message = `El ${nextSubjectName} comienza en: <span>${timeDisplay}</span>`;
+                    } else {
+                        message = `Próxima Clase (${nextSubjectName}) inicia en: <span>${timeDisplay}</span>`;
+                    }
+                }
+            }
+            
+            countdownBannerEl.innerHTML = message;
         }
 
 
@@ -221,13 +367,17 @@
         window.onload = function() {
             updateMetadata();
             checkCurrentClass();
+            updateCountdown();
             
-            // Actualizar la hora en metadata cada segundo
-            setInterval(updateMetadata, 1000); 
-            // Verificar el horario cada 30 segundos
+            // Actualizar la hora en metadata y el contador cada segundo
+            setInterval(() => {
+                updateMetadata();
+                updateCountdown();
+            }, 1000); 
+
+            // Verificar la clase activa cada 30 segundos (suficiente para transiciones de minuto)
             setInterval(checkCurrentClass, 30000); 
         };
     </script>
 </body>
 </html>
-
