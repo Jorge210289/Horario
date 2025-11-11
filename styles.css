@@ -1,0 +1,124 @@
+/* Estilos Generales y Tipografía */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6; /* Fondo suave */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #004d40; /* Color corporativo/académico */
+    margin-bottom: 5px;
+}
+
+.metadata {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Estilos de la Tabla */
+.horario-clases {
+    width: 100%;
+    border-collapse: collapse; /* Elimina espacios entre celdas */
+    margin-top: 20px;
+    table-layout: fixed; /* Ayuda con el ancho en responsividad */
+}
+
+.horario-clases th, .horario-clases td {
+    border: 1px solid #ddd;
+    padding: 10px 5px;
+    text-align: center;
+    height: 60px; /* Altura mínima para legibilidad */
+    vertical-align: middle;
+    font-size: 0.9em;
+}
+
+.horario-clases thead th {
+    background-color: #00796b;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* Colores Distintivos por Asignatura (Clases CSS) */
+.clase {
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.clase:hover {
+    opacity: 0.85;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.grupo {
+    display: block;
+    font-weight: normal;
+    font-size: 0.8em;
+    margin-top: 3px;
+    color: #333;
+}
+
+/* Asignaciones de color por materia */
+.desarrollo-app { background-color: #e0f2f1; border-left: 5px solid #009688; } /* Verde menta */
+.diseno-bd { background-color: #e99612; border-left: 5px solid #ff9800; } /* Naranja suave */
+.diseno-web { background-color: #0883db; border-left: 5px solid #2196f3; } /* Azul claro */
+.tec-dig { background-color: #e0118a; border-left: 5px solid #e91e63; } /* Rosa */
+.imadsi { background-color: #07dfee; border-left: 5px solid #9c27b0; } /* Morado */
+.taller { background-color: #eaee0c; border-left: 5px solid #ff5722; } /* Terracota */
+.Pedagogica { background-color: #08d45d; border-left: 5px solid #ff5722; } /* Terracota */
+
+/* Estilos para Días, Recreo y Almuerzo */
+.dia {
+    background-color: #e0e0e0;
+    font-weight: bold;
+    width: 60px; /* Ancho fijo para la columna de días */
+}
+
+.recreo, .almuerzo {
+    background-color: #d1c4e9; /* Lavanda */
+    font-weight: bold;
+    font-style: italic;
+    color: #673ab7;
+    font-size: 1em;
+}
+
+/* Media Query para Responsividad (ej. en tabletas y móviles) */
+/* La tabla se hará deslizable horizontalmente en pantallas pequeñas */
+@media (max-width: 1000px) {
+    .container {
+        padding: 10px;
+    }
+
+    /* Hace el contenedor de la tabla deslizable */
+    .table-responsive-container {
+        overflow-x: auto;
+    }
+    
+    .horario-clases {
+        display: block;
+        min-width: 900px; /* Mantiene un ancho mínimo para que sea legible y deslizable */
+    }
+
+    .horario-clases th, .horario-clases td {
+        padding: 8px 3px;
+        font-size: 0.85em;
+    }
+}
