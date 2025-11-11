@@ -44,7 +44,7 @@ h1 {
     border: 1px solid #ddd;
     padding: 10px 5px;
     text-align: center;
-    height: 60px; /* Altura mínima para legibilidad */
+    height: 70px; /* Incrementada para mejor legibilidad del texto en dos líneas */
     vertical-align: middle;
     font-size: 0.9em;
 }
@@ -59,12 +59,12 @@ h1 {
 /* Colores Distintivos por Asignatura (Clases CSS) */
 .clase {
     font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    cursor: default; /* Eliminamos el cursor de pointer ya que no hay funcionalidad JS */
+    transition: all 0.5s ease-in-out;
 }
 
 .clase:hover {
-    opacity: 0.85;
+    opacity: 0.95;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -73,17 +73,18 @@ h1 {
     font-weight: normal;
     font-size: 0.8em;
     margin-top: 3px;
-    color: #333;
+    color: #111; /* Color más oscuro para mejor contraste sobre fondos claros */
 }
 
-/* Asignaciones de color por materia */
-.desarrollo-app { background-color: #e0f2f1; border-left: 5px solid #009688; } /* Verde menta */
-.diseno-bd { background-color: #e99612; border-left: 5px solid #ff9800; } /* Naranja suave */
-.diseno-web { background-color: #0883db; border-left: 5px solid #2196f3; } /* Azul claro */
-.tec-dig { background-color: #e0118a; border-left: 5px solid #e91e63; } /* Rosa */
-.imadsi { background-color: #07dfee; border-left: 5px solid #9c27b0; } /* Morado */
-.taller { background-color: #eaee0c; border-left: 5px solid #ff5722; } /* Terracota */
-.Pedagogica { background-color: #08d45d; border-left: 5px solid #ff5722; } /* Terracota */
+/* Asignaciones de color por materia - Colores Actualizados y Pedagogica */
+.desarrollo-app { background-color: #e0f2f1; border-left: 5px solid #009688; } /* DASI - Verde menta */
+.diseno-bd { background-color: #ffc107; border-left: 5px solid #ff9800; color: #333; } /* DDBD - Amarillo/Naranja vibrante */
+.diseno-web { background-color: #bbdefb; border-left: 5px solid #2196f3; color: #333; } /* DPWRM - Azul suave */
+.tec-dig { background-color: #f8bbd0; border-left: 5px solid #e91e63; color: #333; } /* Tec. Dig - Rosa suave */
+.imadsi { background-color: #e1bee7; border-left: 5px solid #9c27b0; color: #333; } /* IMASI - Morado claro */
+.taller { background-color: #ffe0b2; border-left: 5px solid #ff5722; color: #333; } /* Taller - Naranja pastel */
+.Pedagogica { background-color: #c8e6c9; border-left: 5px solid #4caf50; font-style: italic; color: #333; } /* Pedagogica - Verde claro */
+
 
 /* Estilos para Días, Recreo y Almuerzo */
 .dia {
@@ -98,27 +99,59 @@ h1 {
     font-style: italic;
     color: #673ab7;
     font-size: 1em;
+    letter-spacing: 0.5px;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Estilos para la Clase Activa (Resaltado de la Clase Actual) */
+.clase-activa {
+    /* Fondo para destacar */
+    background-color: #ffeb3b !important; /* Amarillo brillante */
+    /* Borde o sombra fuerte */
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.8), inset 0 0 5px rgba(255, 160, 0, 1);
+    border: 3px solid #ff9800 !important; /* Naranja fuerte */
+    transform: scale(1.02); /* Pequeño zoom para un efecto 'pulsante' */
+    position: relative;
+    z-index: 10;
+}
+
+.clase-activa::after {
+    content: "CLASE ACTUAL";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff9800;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.65em;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
 /* Media Query para Responsividad (ej. en tabletas y móviles) */
-/* La tabla se hará deslizable horizontalmente en pantallas pequeñas */
 @media (max-width: 1000px) {
     .container {
         padding: 10px;
     }
-
-    /* Hace el contenedor de la tabla deslizable */
-    .table-responsive-container {
-        overflow-x: auto;
-    }
     
     .horario-clases {
         display: block;
-        min-width: 900px; /* Mantiene un ancho mínimo para que sea legible y deslizable */
+        min-width: 1000px; 
+        overflow-x: auto; 
     }
 
     .horario-clases th, .horario-clases td {
         padding: 8px 3px;
-        font-size: 0.85em;
+        font-size: 0.8em;
+        white-space: normal; 
+    }
+    
+    /* Ajuste para el marcador de clase activa en móvil */
+    .clase-activa::after {
+        top: -15px;
+        font-size: 0.7em;
+        padding: 2px 8px;
     }
 }
