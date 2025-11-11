@@ -10,85 +10,227 @@
 
     <div class="container">
         <h1>Horario Semanal de Clases</h1>
+        <!-- El contenido de este párrafo se actualizará con la hora actual mediante JavaScript -->
         <p class="metadata">Profesor: Jorge Luis Abreu, M.A. | Generado: 27/08/2025</p>
 
-        <table class="horario-clases">
-            <thead>
-                <tr>
-                    <th>Día</th>
-                    <th>1<br>8:00-8:50</th>
-                    <th>2<br>8:50-9:40</th>
-                    <th>3<br>9:40-10:30</th>
-                    <th>Recreo<br>10:30-11:00</th>
-                    <th>4<br>11:00-11:45</th>
-                    <th>5<br>11:45-12:30</th>
-                    <th>Almuerzo<br>12:30-13:30</th>
-                    <th>6<br>13:30-14:20</th>
-                    <th>7<br>14:20-15:10</th>
-                    <th>8<br>15:10-16:00</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="dia">Lun</td>
-                    <td class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
-                    <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>					
-                    <td class="clase tec-dig">Tec. Dig<br><span class="grupo">4to C</span></td>
-                    <td rowspan="5" class="recreo">Recreo</td>
-                    <td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
-                    <td class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
-                    <td rowspan="5" class="almuerzo">Almuerzo</td>
-			        <td colspan="2" class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
-                    <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
-                </tr>
-                <tr>
-                    <td class="dia">Mar</td>
-                    <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
-	                <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>				
-                    <td class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
-                    <td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
-	                <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>							
-                    <td class="clase taller">Taller<br><span class="grupo">3ro A</span></td>
-                    <td class="clase imadsi">IMASI<br><span class="grupo">6to</span></td>
-                    <td class="clase tec-dig">Tec. Dig<br><span class="grupo">4to C</span></td>
-                </tr>
-                <tr>
-                    <td class="dia">Mi</td>
-                    <td class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
-                    <td class="clase diseno-bd">DDBD-CALIG<br><span class="grupo">4to B</span></td>
-                    <td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
-	                <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>	
-                    <td class="clase imadsi">IMASI<br><span class="grupo">6to I</span></td>
-	                <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>	
-                    <td class="clase tec-dig">Tec. Dig<br><span class="grupo">4to C</span></td>		
-                    <td class="clase taller">Taller<br><span class="grupo">3ro B</span></td>					
-                 </tr>
-                <tr>
-                    <td class="dia">Jue</td>
-					<td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>	
-					<td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
-					<td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
-                    <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
-                    <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
-                    <td colspan="2" class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
-                    <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
-                </tr>
-                <tr>
-                    <td class="dia">Vie</td>
-					<td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
-                    <td class="clase imadsi">IMASI<br><span class="grupo">6to</span></td>
-                    <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
-					<td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
-                    <td class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
-                    <td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
-					<td class="clase diseno-bd">DDBD-VPS<br><span class="grupo">4to B</span></td>
-                    <td class="clase diseno-web">DPWRM-VPS<br><span class="grupo">4to B</span></td>
-            </tbody>
-        </table>
-		<p>Carga horaria: 29 horas de Clases</p>
+        <div class="table-responsive-container"> <!-- Contenedor para scroll horizontal en móvil -->
+            <table class="horario-clases">
+                <thead>
+                    <tr>
+                        <th>Día</th>
+                        <th>1<br>8:00-8:50</th>
+                        <th>2<br>8:50-9:40</th>
+                        <th>3<br>9:40-10:30</th>
+                        <th>Recreo<br>10:30-11:00</th>
+                        <th>4<br>11:00-11:45</th>
+                        <th>5<br>11:45-12:30</th>
+                        <th>Almuerzo<br>12:30-13:30</th>
+                        <th>6<br>13:30-14:20</th>
+                        <th>7<br>14:20-15:10</th>
+                        <th>8<br>15:10-16:00</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="dia">Lun</td>
+                        <td class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
+                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>					
+                        <td class="clase tec-dig">Tec. Dig<br><span class="grupo">4to C</span></td>
+                        <td rowspan="5" class="recreo">Recreo</td>
+                        <td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
+                        <td class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
+                        <td rowspan="5" class="almuerzo">Almuerzo</td>
+                        <td colspan="2" class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
+                        <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
+                    </tr>
+                    <tr>
+                        <td class="dia">Mar</td>
+                        <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
+                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>				
+                        <td class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
+                        <td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
+                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>							
+                        <td class="clase taller">Taller<br><span class="grupo">3ro A</span></td>
+                        <td class="clase imadsi">IMASI<br><span class="grupo">6to</span></td>
+                        <td class="clase tec-dig">Tec. Dig<br><span class="grupo">4to C</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="dia">Mi</td>
+                        <td class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
+                        <td class="clase diseno-bd">DDBD-CALIG<br><span class="grupo">4to B</span></td>
+                        <td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
+                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>	
+                        <td class="clase imadsi">IMASI<br><span class="grupo">6to I</span></td>
+                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>	
+                        <td class="clase tec-dig">Tec. Dig<br><span class="grupo">4to C</span></td>		
+                        <td class="clase taller">Taller<br><span class="grupo">3ro B</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="dia">Jue</td>
+                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>	
+                        <td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
+                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
+                        <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
+                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
+                        <td colspan="2" class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
+                        <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="dia">Vie</td>
+                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
+                        <td class="clase imadsi">IMASI<br><span class="grupo">6to</span></td>
+                        <td class="clase diseno-bd">DDBD<br><span class="grupo">4to B</span></td>
+                        <td class="Pedagogica">Pedagógica<br><span class="grupo"></span></td>
+                        <td class="clase desarrollo-app">DASI<br><span class="grupo">5to I</span></td>
+                        <td class="clase diseno-web">DPWRM<br><span class="grupo">4to B</span></td>
+                        <td class="clase diseno-bd">DDBD-VPS<br><span class="grupo">4to B</span></td>
+                        <td class="clase diseno-web">DPWRM-VPS<br><span class="grupo">4to B</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Carga horaria: 29 horas de Clases</p>
     </div>
+
+    <script>
+        // Mapeo de índices de celdas para cada día, considerando rowspans y colspans.
+        // El índice es 0-based dentro de la colección de <td> para cada <tr>.
+        // [P1, P2, P3, P4, P5, P6, P7, P8]
+        const periodCellMap = {
+            0: [1, 2, 3, 5, 6, 8, 8, 9], // Lun: P6/P7 en índice 8. P4, P5 saltan Recreo(4). P8 en 9.
+            1: [1, 2, 3, 4, 5, 6, 7, 8], // Mar: P4/P5 no saltan Recreo. P6-P8 son 6, 7, 8.
+            2: [1, 2, 3, 4, 5, 6, 7, 8], // Mi: Igual que Mar.
+            3: [1, 2, 3, 4, 5, 6, 6, 7], // Jue: P6/P7 en índice 6. P8 en 7.
+            4: [1, 2, 3, 4, 5, 6, 7, 8], // Vie: Igual que Mar.
+        };
+
+        // Definición de los intervalos de tiempo y sus correspondientes períodos.
+        const periods = [
+            { start: "08:00", end: "08:50", period: 1 },
+            { start: "08:50", end: "09:40", period: 2 },
+            { start: "09:40", end: "10:30", period: 3 },
+            { start: "10:30", end: "11:00", period: "Recreo" }, 
+            { start: "11:00", end: "11:45", period: 4 },
+            { start: "11:45", end: "12:30", period: 5 },
+            { start: "12:30", end: "13:30", period: "Almuerzo" }, 
+            { start: "13:30", end: "14:20", period: 6 },
+            { start: "14:20", end: "15:10", period: 7 },
+            { start: "15:10", end: "16:00", period: 8 },
+        ];
+        
+        // Elemento para actualizar la hora actual
+        const metadataEl = document.querySelector('.metadata');
+
+        /**
+         * Actualiza el párrafo de metadatos con la fecha y hora actual.
+         */
+        function updateMetadata() {
+            const now = new Date();
+            // Uso de toLocaleTimeString con opciones para obtener la hora local y segundos
+            const time = now.toLocaleTimeString('es-DO', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            const date = now.toLocaleDateString('es-DO', { day: '2-digit', month: '2-digit', year: 'numeric' });
+            metadataEl.innerHTML = `Profesor: Jorge Luis Abreu, M.A. | Hoy: ${date} | Hora Actual: ${time}`;
+        }
+
+
+        /**
+         * Verifica el horario actual y resalta la celda de la clase correspondiente.
+         */
+        function checkCurrentClass() {
+            // 1. Limpiar cualquier clase activa previa
+            document.querySelectorAll('.clase-activa').forEach(el => el.classList.remove('clase-activa'));
+
+            const now = new Date();
+            // JS getDay(): 0=Dom, 1=Lun, ..., 5=Vie, 6=Sáb
+            const currentDayIndex = now.getDay(); 
+
+            // Solo verificar de Lunes (1) a Viernes (5)
+            if (currentDayIndex < 1 || currentDayIndex > 5) {
+                return;
+            }
+
+            // Mapeo del día de JS al índice de fila 0-based de la tabla (Lun=0, Mar=1, ...)
+            const tableRowIndex = currentDayIndex - 1; 
+            const scheduleBody = document.querySelector('.horario-clases tbody');
+            const currentRow = scheduleBody.rows[tableRowIndex];
+
+            if (!currentRow) return;
+
+            // Formato de la hora actual "HH:MM"
+            const timeString = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+
+            let currentPeriod = null;
+            let periodFound = false;
+
+            // 2. Encontrar el período actual basado en la hora
+            for (const p of periods) {
+                // Compara la hora actual con el inicio y el fin del período
+                if (timeString >= p.start && timeString < p.end) {
+                    currentPeriod = p;
+                    periodFound = true;
+                    break;
+                }
+            }
+            
+            if (!periodFound) {
+                 // Fuera de horario (antes de las 8:00 o después de las 16:00)
+                 return;
+            }
+
+            let cellIndex = -1; 
+            let isBreak = false;
+            
+            // 3. Mapear el período a la celda de la tabla
+            if (currentPeriod.period === "Recreo") {
+                cellIndex = 4; // Índice absoluto de Recreo en la fila de Lun (rowspan cell)
+                isBreak = true;
+            } else if (currentPeriod.period === "Almuerzo") {
+                cellIndex = 7; // Índice absoluto de Almuerzo en la fila de Lun (rowspan cell)
+                isBreak = true;
+            } else {
+                // Períodos de Clase (1-8)
+                const logicalPeriod = currentPeriod.period;
+                
+                const rowMap = periodCellMap[tableRowIndex];
+                if (rowMap) {
+                    const periodArrayIndex = logicalPeriod - 1; 
+                    if (periodArrayIndex >= 0 && periodArrayIndex < rowMap.length) {
+                         cellIndex = rowMap[periodArrayIndex];
+                    }
+                }
+            }
+
+            // 4. Aplicar el resaltado
+            if (cellIndex !== -1) {
+                if (isBreak) {
+                    // Para Recreo y Almuerzo, resaltamos la celda maestra de la fila de Lun
+                    // Es la única celda visible que tiene el rowspan
+                    const breakCell = scheduleBody.rows[0].getElementsByTagName('td')[cellIndex];
+                    if (breakCell) breakCell.classList.add('clase-activa');
+                } else {
+                    // Para clases regulares, usamos el índice relativo a la fila actual
+                    const targetCell = currentRow.getElementsByTagName('td')[cellIndex];
+                    if (targetCell) {
+                        targetCell.classList.add('clase-activa');
+                    }
+                }
+            } 
+        }
+
+        // Ejecutar las funciones al cargar la página y establecer el intervalo de actualización
+        window.onload = function() {
+            updateMetadata();
+            checkCurrentClass();
+            
+            // Actualizar la hora en metadata cada segundo
+            setInterval(updateMetadata, 1000); 
+            // Verificar el horario cada 30 segundos
+            setInterval(checkCurrentClass, 30000); 
+        };
+    </script>
 </body>
 </html>
-
-
-
