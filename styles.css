@@ -64,61 +64,113 @@ h1 {
 
 .horario-clases th, .horario-clases td {
     border: 1px solid #ddd;
-    padding: 10px 5px;
+    /* Remover padding del TD para transferir la clickeabilidad al <a> */
+    padding: 0; 
     text-align: center;
     height: 70px; /* Incrementada para mejor legibilidad del texto en dos líneas */
     vertical-align: middle;
     font-size: 0.9em;
 }
 
+/* Aplicar padding a las celdas que NO tienen un link (Día, Recreo, Almuerzo, Pedagogica sin link) */
+.horario-clases .dia, .horario-clases .recreo, .horario-clases .almuerzo, .horario-clases .Pedagogica {
+    padding: 10px 5px; 
+}
+
+
 .horario-clases thead th {
     background-color: #00796b;
     color: white;
+    padding: 15px 5px;
     font-weight: bold;
     font-size: 1em;
 }
 
-/* Colores Distintivos por Asignatura (Clases CSS) */
-.clase {
-    font-weight: bold;
-    cursor: default; /* Eliminamos el cursor de pointer ya que no hay funcionalidad JS */
-    transition: all 0.5s ease-in-out;
+.horario-clases tbody td {
+    cursor: default; /* Por defecto, sin cursor de link */
+    transition: background-color 0.3s ease;
 }
 
-.clase:hover {
-    opacity: 0.95;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+/* Estilo al pasar el ratón sobre las celdas de clase */
+.horario-clases td.clase:hover {
+    filter: brightness(0.95); /* Oscurecer un poco al pasar el ratón */
+}
+
+/* Estilo específico para celdas clickeables */
+.horario-clases td.clase {
+    cursor: pointer; /* Cursor de mano para indicar que es clickeable */
+}
+
+/* NUEVOS ESTILOS: Asegurar que el link sea totalmente clickeable y mantenga el estilo */
+.horario-clases td.clase a {
+    color: inherit;         /* Mantiene el color del texto de la celda */
+    text-decoration: none;  /* Elimina el subrayado del link */
+    display: flex;          /* Usar flexbox para centrar el contenido */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px 5px;      /* Restaurar el padding visual */
+    box-sizing: border-box; 
+}
+
+
+/* Clases de Asignaturas (Colores) */
+
+.desarrollo-app {
+    background-color: #c7f7d1; /* Verde claro */
+    border-left: 5px solid #28a745; /* Verde fuerte */
+    color: #333;
+}
+
+.diseno-bd {
+    background-color: #ffcdd2; /* Rojo claro/Rosado */
+    border-left: 5px solid #dc3545; /* Rojo fuerte */
+    color: #333;
+}
+
+.diseno-web {
+    background-color: #bbdefb; /* Azul claro */
+    border-left: 5px solid #2196f3; /* Azul primario */
+    color: #333;
+}
+
+.Pedagogica {
+    background-color: #c8e6c9; /* Verde claro */
+    border-left: 5px solid #4caf50; 
+    font-style: italic;
+    color: #333;
+}
+
+.recreo, .almuerzo {
+    background-color: #ffe0b2; /* Naranja pastel */
+    font-weight: bold;
+    color: #d84315;
+}
+
+.tec-dig {
+    background-color: #f8bbd0; /* Rosa suave */
+    border-left: 5px solid #e91e63; /* Magenta */
+    color: #333;
+}
+
+.imadsi {
+    background-color: #e1bee7; /* Morado claro */
+    border-left: 5px solid #9c27b0; /* Morado */
+    color: #333;
+}
+
+.taller {
+    background-color: #ffe0b2; /* Naranja pastel */
+    border-left: 5px solid #ff5722; /* Naranja fuerte */
+    color: #333;
 }
 
 .grupo {
     display: block;
-    font-weight: normal;
     font-size: 0.8em;
-    margin-top: 3px;
-    color: #111; /* Color más oscuro para mejor contraste sobre fondos claros */
-}
-
-/* Asignaciones de color por materia - Colores Actualizados y Pedagogica */
-.desarrollo-app { background-color: #e0f2f1; border-left: 5px solid #009688; } /* DASI - Verde menta */
-.diseno-bd { background-color: #ffc107; border-left: 5px solid #ff9800; color: #333; } /* DDBD - Amarillo/Naranja vibrante */
-.diseno-web { background-color: #bbdefb; border-left: 5px solid #2196f3; color: #333; } /* DPWRM - Azul suave */
-.tec-dig { background-color: #f8bbd0; border-left: 5px solid #e91e63; color: #333; } /* Tec. Dig - Rosa suave */
-.imadsi { background-color: #e1bee7; border-left: 5px solid #9c27b0; color: #333; } /* IMASI - Morado claro */
-.taller { background-color: #ffe0b2; border-left: 5px solid #ff5722; color: #333; } /* Taller - Naranja pastel */
-.Pedagogica { background-color: #c8e6c9; border-left: 5px solid #4caf50; font-style: italic; color: #333; } /* Pedagogica - Verde claro */
-
-
-/* Estilos para Días, Recreo y Almuerzo */
-.dia {
-    background-color: #e0e0e0;
-    font-weight: bold;
-    width: 60px; /* Ancho fijo para la columna de días */
-}
-
-.recreo, .almuerzo {
-    background-color: #d1c4e9; /* Lavanda */
-    font-weight: bold;
-    font-style: italic;
+    font-weight: normal;
     color: #673ab7;
     font-size: 1em;
     letter-spacing: 0.5px;
@@ -152,28 +204,100 @@ h1 {
     white-space: nowrap;
 }
 
-/* Media Query para Responsividad (ej. en tabletas y móviles) */
-@media (max-width: 1000px) {
-    .container {
-        padding: 10px;
-    }
-    
-    .horario-clases {
-        display: block;
-        min-width: 1000px; 
-        overflow-x: auto; 
-    }
 
-    .horario-clases th, .horario-clases td {
-        padding: 8px 3px;
-        font-size: 0.8em;
-        white-space: normal; 
-    }
-    
-    /* Ajuste para el marcador de clase activa en móvil */
-    .clase-activa::after {
-        top: -15px;
-        font-size: 0.7em;
-        padding: 2px 8px;
-    }
+/* ---------------------------------------------------------------------- */
+/* --- NUEVOS ESTILOS PARA LAS PÁGINAS DE ASIGNATURA (e.g., dpwrm.html) --- */
+/* ---------------------------------------------------------------------- */
+
+.subject-header {
+    background-color: #2196f3; /* Azul primario de la clase 'diseno-web' */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.subject-header h1 {
+    color: white;
+    margin-bottom: 0;
+}
+
+/* Estilos para las secciones de planificación (Modular, RA, Diaria) */
+.planificacion-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.planificacion-section h2 {
+    color: #004d40;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.planificacion-section h3 {
+    color: #1e88e5; /* Azul para subsecciones */
+    margin-top: 15px;
+    font-size: 1.2em;
+}
+
+/* Estilos para las listas de RA y EC */
+.ra-list, .ec-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.ra-list li {
+    background-color: #e3f2fd; /* Fondo claro para RA */
+    padding: 12px;
+    border-left: 4px solid #1e88e5;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.ec-list li {
+    font-size: 0.95em;
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+    font-weight: normal;
+}
+
+.ec-list li::before {
+    content: "•";
+    color: #1e88e5;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Estilos para la tabla de Planificación Diaria */
+.planificacion-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.planificacion-table th, .planificacion-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 0.9em;
+}
+
+.planificacion-table th {
+    background-color: #cfd8dc;
+    color: #333;
+    font-weight: bold;
+    width: 25%; /* Ajuste para el ancho de las columnas de los momentos pedagógicos */
 }
