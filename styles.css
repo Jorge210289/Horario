@@ -54,27 +54,38 @@ h1 {
     background: linear-gradient(135deg, #ff9800, #d84315); /* Naranja/Rojo para Receso */
 }
 
+/* * CORRECCIÓN DE RESPONSIVIDAD 
+ * Se asume que el HTML envuelve la tabla en <div class="table-responsive-container">...</div>
+ */
+.table-responsive-container {
+    /* Permite scroll horizontal solo en dispositivos pequeños */
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch;
+}
+
 /* Estilos de la Tabla */
 .horario-clases {
     width: 100%;
     border-collapse: collapse; /* Elimina espacios entre celdas */
     margin-top: 20px;
-    table-layout: fixed; /* Ayuda con el ancho en responsividad */
+    /* Remover table-layout: fixed para que el navegador ajuste mejor el contenido en el contenedor de scroll */
+    /* table-layout: fixed; */
+    min-width: 700px; /* Ancho mínimo para forzar el scroll en móviles y mantener las celdas legibles */
 }
 
 .horario-clases th, .horario-clases td {
     border: 1px solid #ddd;
-    /* Remover padding del TD para transferir la clickeabilidad al <a> */
-    padding: 0; 
+    padding: 0;	
     text-align: center;
     height: 70px; /* Incrementada para mejor legibilidad del texto en dos líneas */
     vertical-align: middle;
     font-size: 0.9em;
+    white-space: nowrap; /* Evita que el texto se rompa demasiado */
 }
 
 /* Aplicar padding a las celdas que NO tienen un link (Día, Recreo, Almuerzo, Pedagogica sin link) */
 .horario-clases .dia, .horario-clases .recreo, .horario-clases .almuerzo, .horario-clases .Pedagogica {
-    padding: 10px 5px; 
+    padding: 10px 5px;	
 }
 
 
@@ -103,16 +114,16 @@ h1 {
 
 /* NUEVOS ESTILOS: Asegurar que el link sea totalmente clickeable y mantenga el estilo */
 .horario-clases td.clase a {
-    color: inherit;         /* Mantiene el color del texto de la celda */
-    text-decoration: none;  /* Elimina el subrayado del link */
-    display: flex;          /* Usar flexbox para centrar el contenido */
+    color: inherit;	
+    text-decoration: none;	
+    display: flex;	
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 10px 5px;      /* Restaurar el padding visual */
-    box-sizing: border-box; 
+    padding: 10px 5px;	
+    box-sizing: border-box;	
 }
 
 
@@ -138,7 +149,7 @@ h1 {
 
 .Pedagogica {
     background-color: #c8e6c9; /* Verde claro */
-    border-left: 5px solid #4caf50; 
+    border-left: 5px solid #4caf50;	
     font-style: italic;
     color: #333;
 }
